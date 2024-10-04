@@ -13,7 +13,7 @@ public:
 	~Stack();
 	bool isEmpty();
 	bool isFull();
-	void Push(int newItem);
+	void Push(char newItem);
 	char Pop();
 	void display();
 
@@ -32,7 +32,7 @@ bool Stack::isEmpty() {
 bool Stack::isFull() {
 	return (top == capacity - 1);
 }
-void Stack::Push(int newItem) {
+void Stack::Push(char newItem) {
 	if (isFull()) {
 		cout << "STACK OVERFLOW" << endl;
 		exit(1);
@@ -48,7 +48,7 @@ char Stack::Pop() {
 	char popVal = items[top];
 	items[top] = 0;
 	top--;
-	cout << popVal;
+	//cout << popVal;
 	return popVal;
 }
 void Stack::display() {
@@ -70,6 +70,7 @@ int main() {
 	while (!newStack.isEmpty()) {
 		temp+=newStack.Pop();
 	}
+	cout << temp << endl;
 	if (palindrome == temp) {
 		cout << "\nString is a palindrome";
 	}
